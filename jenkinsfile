@@ -10,25 +10,28 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Building.."
+                echo 'Building..'
                 sh '''
-                echo "doing build stuff.."
+                    cd sample
+                    pip install -r requirements.txt
                 '''
             }
         }
         stage('Test') {
             steps {
-                echo "Testing.."
+                echo 'Testing..'
                 sh '''
-                echo "doing test stuff.."
+                    cd sample
+                    python main.py --name=John
                 '''
             }
         }
         stage('Deliver') {
             steps {
-                echo 'Deliver....'
+                echo 'Deliver...'
                 sh '''
-                echo "doing delivery stuff.."
+                    cd sample
+                    python main.py
                 '''
             }
         }
