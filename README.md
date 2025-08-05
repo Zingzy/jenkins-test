@@ -38,7 +38,9 @@ http://127.0.0.1:8080
 ```
 
 
-## Setting up Cloud Jenkins Agent
+## Setting up Cloud Jenkins Agent (alpine/socat)
+
+alpine/socat is a lightweight container that can be used to create a TCP connection to the Docker daemon.
 
 ```bash
 docker run -d --restart=always -p 127.0.0.1:2376:2375 --network jenkins -v /var/run/docker.sock:/var/run/docker.sock alpine/socat tcp-listen:2375,fork,reuseaddr unix-connect:/var/run/docker.sock
