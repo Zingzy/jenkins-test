@@ -22,7 +22,7 @@ pipeline {
                 echo 'Testing..'
                 sh '''
                     cd sample
-                    python main.py --name=John
+                    python3 main.py --name=John
                 '''
             }
         }
@@ -31,7 +31,7 @@ pipeline {
                 echo 'Deliver...'
                 sh '''
                     cd sample
-                    python main.py
+                    python3 main.py
                 '''
             }
         }
